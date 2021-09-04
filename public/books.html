@@ -9,7 +9,7 @@
   <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-  <link href="style.css" rel="stylesheet" type="text/css" />
+  <link href="css/style.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body>
@@ -38,6 +38,90 @@
       </ul>
     </div>
   </nav>
+
+  <table class="table table-dark table-striped"> <!--Using code from -- https://www.w3schools.com/html/html_tables.asp -->
+    <thead class="thead-dark">
+    <tr>
+      <th>Title</th>
+      <th>Author</th>
+      <th>Year Published</th>
+      <th>Publisher</th>
+      <th>Page Count</th>
+      <th>MSRP</th>
+    </tr>
+ </thead>
+
+ <tbody>
+    <tr>
+      <td>Alfreds Futterkiste</td>
+      <td>Maria Anders</td>
+      <td>1823</td>
+      <td>Penguin</td>
+      <td>293</td>
+      <td>$30</td>
+    </tr>
+    <tr>
+        <td>The Book Thief</td>
+        <td>Maria Anders</td>
+        <td>2008</td>
+        <td>Penguin</td>
+        <td>264</td>
+        <td>$30</td>
+      </tr>
+      <tr>
+        <td>Hunger Games</td>
+        <td>Suzanne Collins</td>
+        <td>2013</td>
+        <td>Penguin</td>
+        <td>293</td>
+        <td>$45</td>
+      </tr>
+      <tr>
+        <td>Percy Jackson</td>
+        <td>Rick Riordan</td>
+        <td>2009</td>
+        <td>Penguin</td>
+        <td>345</td>
+        <td>$28</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <br>
+  <br>
+
+  <form> <!-- Using code from - https://getbootstrap.com/docs/4.1/components/forms/-->
+    <div class="form-group">
+      <label for="exampleTitle">Title</label>
+      <input type="text" class="form-control" id="exampleTitle" aria-describedby="Title" placeholder="Enter book title">
+    </div>
+    <div class="form-group">
+      <label for="exampleAuthor">Author</label>
+      <input type="text" class="form-control" id="exampleAuthor" placeholder="Author">
+    </div>
+    <div class="form-group">
+      <label for="exampleYear">Year Published</label>
+      <input type="text" class="form-control" id="exampleYear" placeholder="Year Published">
+    </div>
+    <div class="form-group">
+        <label for="examplePublisher">Publisher</label>
+        <input type="text" class="form-control" id="examplePublisher" placeholder="Publisher">
+    </div>
+    <div class="form-group">
+        <label for="examplePageCount">Page Count</label>
+        <input type="text" class="form-control" id="examplePageCount" placeholder="Number of Pages">
+    </div>
+    <div class="form-group">
+        <label for="exampleMSRP">MSRP</label>
+        <input type="text" class="form-control" id="exampleMSRP" placeholder="Price">
+    </div>
+
+    <div class="form-group form-check">
+      <input type="checkbox" class="form-check-input" id="exampleCheck1">
+      <label class="form-check-label" for="exampleCheck1">Check me out</label>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
   
 </div>
 </body>
