@@ -65,4 +65,13 @@ header{
     opacity: 0.7;
   }
 
-  <!--Using code from -- https://www.w3schools.com/html/html_tables.asp>
+  h3{
+    background-color: #FFE4B5;
+    color: black;
+    border-radius: 10px;
+    padding-left: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    border: #FFE4B5 solid 5px;
+    padding-left: 100px;
+
+
