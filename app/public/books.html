@@ -39,7 +39,7 @@
     </div>
   </nav>
 
-  <table class="table table-dark table-striped"> <!--Using code from -- https://www.w3schools.com/html/html_tables.asp -->
+  <table id="bookTable" class="table table-dark table-striped"> <!--Using code from -- https://www.w3schools.com/html/html_tables.asp -->
     <thead class="thead-dark">
     <tr>
       <th>Title</th>
@@ -124,5 +124,9 @@
   </form>
   
 </div>
+<script src="js/tablesort.min.js"> </script>
+<script>
+  new Tablesort(document.getElementById('bookTable'));
+</script>
 </body>
 </html>
