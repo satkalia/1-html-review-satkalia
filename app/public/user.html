@@ -10,13 +10,14 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
   <link href="css/style.css" rel="stylesheet" type="text/css" />
+  <script src="https://unpkg.com/vue@next"></script> 
 </head>
 
 <body>
   <div class="container">
   <header class="row"> 
     <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
-      <h1> Nellie Edwards </h1>
+      <h1> Random Person </h1>
     </div>
   </header>
 
@@ -42,26 +43,33 @@
   <!-- Add icon library using W3Schools - https://www.w3schools.com/howto/howto_css_profile_card.asp -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
- <div class="card">
-    <p><cite>Nellie Edwards</cite> https://en.wikipedia.org/wiki/Nellie_Bly </p>
+ <div class="card" id="someApp">
 
-    <a target="_blank" href="img/Nellie.jpg"> 
-    <img src="img/Nellie.jpg" alt="Nellie" style="width:75%"> 
-    </a>
+  <form v-on:submit.prevent="fetchUserData">
+    <button type="submit">Refresh</button>
+  </form>
+   
+  <p> Name: {{result.name.first}} {{result.name.last}}</p> 
+  <p> Country of Origin: {{result.location.country}}</p>
+  <p> Birthdate: {{result.dob.age}}</p>
+  <p> Age: {{prettyBirthday}}</p>
+  <p> Email Address: <a v-bind:href=" 'mailto:' +result.email"> {{result.email}} </a> </p> <!-- Mailto Code from https://www.wikihow.com/Create-an-Email-Link-in-HTML#:~:text=Use%20the%20link%20code%20%3Ca,to%3A%20mailto%3AEmailAddress%40.-->
 
-  <h1>Nellie Edwards</h1>
-  <p class="title">CEO & Founder, Example</p>
-  <p>Country of Origin: Australia</p>
-  <p> Birthdate: January 15, 2013</p>
-  <p> Age: 23 </p>
-  <p> <a href="mailto:nellie123@gmail.com"> Email Address: nellie123@gmail.com </a> </p> <!-- Mailto Code from https://www.wikihow.com/Create-an-Email-Link-in-HTML#:~:text=Use%20the%20link%20code%20%3Ca,to%3A%20mailto%3AEmailAddress%40.-->
   <a href="#"><i class="fa fa-dribbble"></i></a>
   <a href="#"><i class="fa fa-twitter"></i></a>
   <a href="#"><i class="fa fa-linkedin"></i></a>
   <a href="#"><i class="fa fa-facebook"></i></a>
   <p><button>Contact</button></p>
 </div>
-  
+
+<img src="">
+
 </div>
+
+<!--  Bootstrap Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
+
+<script src="js/index.js"></script>
 </body>
 </html>
