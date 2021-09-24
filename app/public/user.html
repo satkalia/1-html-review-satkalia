@@ -48,7 +48,10 @@
   <form v-on:submit.prevent="fetchUserData">
     <button type="submit">Refresh</button>
   </form>
-   
+
+  <br>
+  
+  <img v-bind:src="result.picture.large">
   <p> Name: {{result.name.first}} {{result.name.last}}</p> 
   <p> Country of Origin: {{result.location.country}}</p>
   <p> Birthdate: {{result.dob.age}}</p>
@@ -62,7 +65,6 @@
   <p><button>Contact</button></p>
 </div>
 
-<img src="">
 
 </div>
 
