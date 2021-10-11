@@ -1,92 +1,65 @@
-<!doctype html>
 <html>
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
-  <title>repl.it</title>
-  
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
-  <link href="css/style.css" rel="stylesheet" type="text/css" />
+  <title>Books</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+  <link href="css/style.css" rel="stylesheet">
   <script src="https://unpkg.com/vue@next"></script>
+  <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
 </head>
 
 <body>
-  <div class="container">
-  <header class="row"> 
-    <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
-      <h1> Nellie Edwards </h1>
-    </div>
-  </header>
+    <nav class="row navbar navbar-default">
+      <div>
+        <!-- Using the attributes for the button class from Professor Mike Collins slide deck for MSIS TBC II -->
+        <button class="navbar-toggle" data-toggle="collapse" data-target="#my_menu">
+          <span class="icon-bar"> </span>
+          <span class="icon-bar"> </span>
+          <span class="icon-bar"> </span>
+        </button>
+      </div>
+  
+      <div class="collapse navbar-collapse" ID="my_menu">
+        <ul class="nav navbar-nav">
+          <li> <a class="nav_links" href="index.html"> Home </a></li>
+          <li> <a class="nav_links" href="user.html"> About Me </a></li>
+          <li> <a class="nav_links" href="books.html"> My Books </a></li>
+        </ul>
+      </div>
+    </nav>
+  
+    <header class="row"> 
+      <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
+        <h1> My Books </h1>
+      </div>
+    </header>
 
-  <nav class="row navbar navbar-default">
-    <div>
-      <!-- Using the attributes for the button class from Professor Mike Collins slide deck for MSIS TBC II -->
-      <button class="navbar-toggle" data-toggle="collapse" data-target="#my_menu">
-        <span class="icon-bar"> </span>
-        <span class="icon-bar"> </span>
-        <span class="icon-bar"> </span>
-      </button>
-    </div>
-
-    <div class="collapse navbar-collapse" ID="my_menu">
-      <ul class="nav navbar-nav">
-        <li> <a class="nav_links" href="index.html"> Home </a></li>
-        <li> <a class="nav_links" href="user.html"> About Me </a></li>
-        <li> <a class="nav_links" href="books.html"> My Books </a></li>
-      </ul>
-    </div>
-  </nav>
-
+  <div id="bookApp" class="container">
   <table id="bookTable" class="table table-dark table-striped"> <!--Using code from -- https://www.w3schools.com/html/html_tables.asp -->
     <thead class="thead-dark">
     <tr>
-      <th>Title</th>
-      <th>Author</th>
-      <th>Year Published</th>
-      <th>Publisher</th>
-      <th>Page Count</th>
-      <th>MSRP</th>
+      <th scope="col">Serial Number</th>
+      <th scope="col">Title</th>
+      <th scope="col">Author</th>
+      <th scope="col">Year Published</th>
+      <th scope="col">Publisher</th>
+      <th scope="col">Page Count</th>
+      <th scope="col">MSRP</th>
     </tr>
  </thead>
 
  <tbody>
-    <tr>
-      <td>Alfreds Futterkiste</td>
-      <td>Maria Anders</td>
-      <td>1823</td>
-      <td>Penguin</td>
-      <td>293</td>
-      <td>$30</td>
+    <tr v-for="bk in book">
+      <td>{{bk.id}}</td>
+      <td>{{bk.title}}</td>
+      <td>{{bk.author}}</td>
+      <td>{{bk.pyear}}</td>
+      <td>{{bk.publisher}}</td>
+      <td>{{bk.pageno}}</td>
+      <td>{{bk.msrp}}</td>
     </tr>
-    <tr>
-        <td>The Book Thief</td>
-        <td>Maria Anders</td>
-        <td>2008</td>
-        <td>Penguin</td>
-        <td>264</td>
-        <td>$30</td>
-      </tr>
-      <tr>
-        <td>Hunger Games</td>
-        <td>Suzanne Collins</td>
-        <td>2013</td>
-        <td>Penguin</td>
-        <td>293</td>
-        <td>$45</td>
-      </tr>
-      <tr>
-        <td>Percy Jackson</td>
-        <td>Rick Riordan</td>
-        <td>2009</td>
-        <td>Penguin</td>
-        <td>345</td>
-        <td>$28</td>
-      </tr>
     </tbody>
   </table>
+  </div>
 
   <br>
   <br>
