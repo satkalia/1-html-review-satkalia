@@ -2,7 +2,7 @@
 const SomeApp = {
     data() {
       return {
-        books: [],
+        book: [],
       }
     },
     computed: {},
