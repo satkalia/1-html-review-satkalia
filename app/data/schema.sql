@@ -4,7 +4,7 @@ USE msishw;
 
 DROP TABLE IF EXISTS book;
 CREATE TABLE book (
-	id int PRIMARY KEY AUTO_INCREMENT,
+	id int PRIMARY KEY AUTO_INCREMENT ,
     title varchar(48) UNIQUE NOT NULL,
     author varchar(48) NOT NULL,
     pyear int NOT NULL,

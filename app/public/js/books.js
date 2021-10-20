@@ -24,7 +24,7 @@ const SomeApp = {
                 console.error(err);
             })
         },
-        postAddBook(evt) {
+        postNewBook(evt) {
             //this.bookForm.bookId = this.selectedBook.id;
             console.log("Posting:", this.bookForm);
             //alert("Posting!");
@@ -39,8 +39,8 @@ const SomeApp = {
            .then(response => response.json())
            .then(json => {
                console.log("Returned from post:", json);
-               //TOFO: test a result was returned!
-               this.books = json;
+               //TODO: test a result was returned!
+               this.book = json;
 
                //reset the form
                this.bookForm = {};
