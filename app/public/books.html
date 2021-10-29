@@ -65,12 +65,22 @@
       <td>{{bk.publisher}}</td>
       <td>{{bk.pageno}}</td>
       <td>{{bk.msrp}}</td>
+
+      <td></td>
+      <td>
+        <button type="button" class="btn btn-outline-secondary btn-sm"
+          v-on:click="selectBook(book)">Edit</button>
+        <button type="button" class="btn btn-outline-secondary btn-sm"
+          v-on:click="postDeleteBook(book)">Delete</button>
+      </td>
     </tr>
     </tbody>
   </table>
 
   <br>
   <br>
+
+  <h3>{{selectedBook === null ? "Add" : "Edit" }} Book</h3>
 
   <form v-on:submit.prevent="postNewBook"> <!-- Using code from - https://getbootstrap.com/docs/4.1/components/forms/-->
     <div class="form-group">
